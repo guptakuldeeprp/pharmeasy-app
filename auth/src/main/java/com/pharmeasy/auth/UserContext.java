@@ -11,6 +11,7 @@ public class UserContext {
 
     public static void setUser(User user) {
         if (user == null) throw new NullPointerException("user cannot be null");
+        userHolder.set(user);
     }
 
     public static void clearUser() {
@@ -27,6 +28,11 @@ public class UserContext {
         return new User() {
             @Override
             public Serializable getId() {
+                return null;
+            }
+
+            @Override
+            public String getUsername() {
                 return null;
             }
 

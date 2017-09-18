@@ -11,6 +11,15 @@ public class Doctor implements User {
     private int age;
     // more domain specific properties and their accessor methods
 
+    public Doctor() {
+
+    }
+
+    public Doctor(Long id, String username, String name) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

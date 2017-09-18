@@ -1,5 +1,7 @@
 package com.pharmeasy.auth.core;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.io.Serializable;
 
 public class AclEntry implements Serializable {
@@ -10,6 +12,18 @@ public class AclEntry implements Serializable {
     Resource resource;
     Permission permission;
     boolean granted;
+
+    public AclEntry() {
+
+    }
+
+    public AclEntry(Long id, User user, Resource resource, Permission permission, boolean granted) {
+        this.id = id;
+        this.user = user;
+        this.resource = resource;
+        this.permission = permission;
+        this.granted = granted;
+    }
 
     public Long getId() {
         return id;

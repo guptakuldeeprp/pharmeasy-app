@@ -8,6 +8,8 @@ public interface PatientRepo {
 
     Patient getPatient(Long id);
 
+    void savePatient(Patient patient);
+
     // other CRUD methods
 
 }

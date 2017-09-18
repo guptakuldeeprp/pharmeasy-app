@@ -98,7 +98,7 @@ public class PatientService {
     public List<Prescription> getPrescriptions(Patient patient) {
         if (!UserContext.getUser().getUsername().equals(patient.getUsername()))
             throw new AccessDeniedException("Access to all prescriptions is permitted only to woner");
-            return prescriptionRepo.getPrescriptions(patient.getUsername());
+        return prescriptionRepo.getPrescriptions(patient.getUsername());
     }
 
     public PatientRepo getPatientRepo() {
@@ -137,6 +137,6 @@ public class PatientService {
     private void checkPermission(Resource resource, Permission permission) {
         if (permissionGrantingManager == null) return;
         if (!permissionGrantingManager.isGranted(UserContext.getUser(), resource, permission))
-            throw new AccessDeniedException("Access denied to user " + UserContext.getUser().getType() + ":" + UserContext.getUser().getId() + "on resource " + resource.getType() + ":" + resource.getId());
+            throw new AccessDeniedException("Access denied to user " + UserContext.getUser().getType() + ":" + UserContext.getUser().getUsername() + " on resource " + resource.getType() + ":" + resource.getId());
     }
 }

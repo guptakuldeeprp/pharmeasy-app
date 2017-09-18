@@ -16,6 +16,17 @@ public class Prescription implements Resource, Comparable<Prescription> {
 
     // more domain specific properties
 
+    public Prescription() {
+
+    }
+
+    public Prescription(Long id, Patient patient, String prescriptionCode, String description) {
+        this.id = id;
+        this.patient = patient;
+        this.prescriptionCode = prescriptionCode;
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }

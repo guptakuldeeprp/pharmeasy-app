@@ -18,6 +18,17 @@ public class Patient implements User {
     private Map<String, MedicalRecord> medicalRecords;
     private Map<String, Prescription> prescriptions;
 
+    public Patient() {
+
+    }
+
+    public Patient(Long id, String username, String name) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+    }
+
+
     public void setId(Long id) {
         this.id = id;
     }

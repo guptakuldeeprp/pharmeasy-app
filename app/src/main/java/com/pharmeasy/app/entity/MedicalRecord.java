@@ -18,6 +18,17 @@ public class MedicalRecord implements Resource, Comparable<MedicalRecord> {
 
     // more domain specific properties and their accessor methods
 
+    public MedicalRecord() {
+
+    }
+
+    public MedicalRecord(Long id, Patient patient, String medRecCode, String description) {
+        this.id = id;
+        this.medRecCode = medRecCode;
+        this.description = description;
+        this.patient = patient;
+    }
+
 
     public Long getId() {
         return id;
